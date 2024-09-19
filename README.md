@@ -1,17 +1,38 @@
 # Laptop-Analysis
 
-Dataset Overview
-The dataset consists of historical sales data from a supermarket company, recorded across three different branches over a period of three months. It contains 1006 rows and the following columns:
-Invoice id: Computer generated sales slip invoice identification number
-Branch: Branch of supercenter (3 branches are available identified by A, B and C).
-City: Location of supercenters
-Customer type: Type of customers, recorded by Members for customers using member card and Normal for without member card.
-Gender: Gender type of customer
-Product line: General item categorization groups - Electronic accessories, Fashion accessories, Food and beverages, Health and beauty, Home and lifestyle, Sports and travel
-Unit price: Price of each product in $
-Quantity: Number of products purchased by customer
-Tax: 5% tax fee for customer buying
-Total: Total price including tax *Date: Date of purchase (Record available from January 2019 to March 2019)
-Time: Purchase time (10am to 9pm)
-Payment: Payment used by customer for purchase (3 methods are available – Cash, Credit card and Ewallet)
-Rating: Customer stratification rating on their overall shopping experience (On a scale of 1 to 10)
+![Uploading image.png…]()
+
+The original dataset was pretty compact with a lot of details in each column. The columns mostly consisted of long strings of data, which was pretty human-readable and concise but for Machine Learning algorithms to work more efficiently it's better to separate the different details into their own columns. After doing so, 28 duplicate rows were exposed and removed with this dataset being the final result.
+
+Credit
+source dataset: https://www.kaggle.com/datasets/muhammetvarl/laptop-price/
+
+preprocessing code: https://www.kaggle.com/code/owm4096/laptop-prices-eda-w-ml-models-91-8-high
+
+Columns:
+Company: Laptop Manufacturer.
+Product: Brand and Model.
+TypeName: Laptop Type (Notebook, Ultrabook, Gaming, …etc).
+Inches: Screen Size.
+Ram: Total amount of RAM in laptop (GBs).
+OS: Operating System installed.
+Weight: Laptop Weight in kilograms.
+Price_euros: Price of Laptop in Euros. (Target)
+Screen: screen definition (Standard, Full HD, 4K Ultra HD, Quad HD+).
+ScreenW: screen width (pixels).
+ScreenH: screen height (pixels).
+Touchscreen: whether or not the laptop has a touchscreen.
+IPSpanel: whether or not the laptop has an IPSpanel.
+RetinaDisplay: whether or not the laptop has retina display.
+CPU_company
+CPU_freq: frequency of laptop CPU (Hz).
+CPU_model
+PrimaryStorage: primary storage space (GB).
+PrimaryStorageType: primary storage type (HDD, SSD, Flash Storage, Hybrid).
+SecondaryStorage: secondary storage space if any (GB).
+SecondaryStorageType: secondary storage type (HDD, SSD, Hybrid, None).
+GPU_company
+GPU_model
+
+Formatting Issues
+The dataset contained some issues in datatpes, Nulls, and I dealed with these issues using python.
