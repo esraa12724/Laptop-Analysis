@@ -1,15 +1,17 @@
 # Laptop-Analysis
 
-![Uploading image.png…]()
 
-The original dataset was pretty compact with a lot of details in each column. The columns mostly consisted of long strings of data, which was pretty human-readable and concise but for Machine Learning algorithms to work more efficiently it's better to separate the different details into their own columns. After doing so, 28 duplicate rows were exposed and removed with this dataset being the final result.
+
+This dataset descripes the inventory of laptop store where they needed to know count of laptops are there and the details of each laptop and the company that produces it.
 
 Credit
+----------------------------
 source dataset: https://www.kaggle.com/datasets/muhammetvarl/laptop-price/
 
 preprocessing code: https://www.kaggle.com/code/owm4096/laptop-prices-eda-w-ml-models-91-8-high
 
 Columns:
+----------------------
 
 Company: Laptop Manufacturer.
 
@@ -56,7 +58,8 @@ SecondaryStorageType: secondary storage type (HDD, SSD, Hybrid, None).
 GPU_company
 
 GPU_model
------------------------------------------------------------------------------------
 
 Formatting Issues
+-----------------------------------------------------------------------------------
+
 The dataset contained some issues in datatpes, Nulls, and I dealed with these issues using python.
