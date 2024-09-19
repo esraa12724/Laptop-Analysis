@@ -1,11 +1,11 @@
-**Import libraries**
+#Import libraries
 import pandas as pd
 import matplotlib.pyplot as plt
 
-**Exporting Data**
+#Exporting Data
 df = pd.read_csv('lap.csv')
 
-**Check Data Type**
+#Check Data Type
 print(df.dtypes)
 
 #Convert data types
