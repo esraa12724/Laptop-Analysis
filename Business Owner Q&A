@@ -1,0 +1,29 @@
+#Does screen Type associated with significantly higher prices?
+Yes, there if a significant effect of screen type on AVG price, as we can see that 4K Ultra HD type has the highest piece with 2424 Euros and the standard type AVG price is only 730 Euros
+
+#How does brand reputation affect laptop prices?
+We can find that Razer has the higest AVG Price with 3346 Euros
+
+#Do certain brands command higher prices, and if so, why?
+In this part we can see that Razer still has the 1st rank as it provides 32 Ram, 17 inches for screen although its CPU-Freq low than othhers, but its reputation and features provided set it on the top
+
+#How do different types of laptops (e.g., Gaming vs. Ultrabook) compare in terms of pricing?	
+After analyzing prices for different types of laptops we found that Workstation has the highest AVG price which is 2280 Euros, but when comparing it with Gaming type although it comes in the 2nd rand, but it has the highest Max price 6099 as it provides many diffrent gaming types starting from 609 Euros in contrast to Workstation that its Max price only 4389 and its Min is 1369 Euros
+
+#What are the price ranges for different types of laptops, and how do they differ?	
+Calculating min / max / avg price and then group by type
+
+#Is there a significant price difference between laptops with high versus low screen resolutions, and how does this differ by type?	
+Yes, we can find that Laptop types with high resolution has the highest AVG price in contrast to laptops with low resolution gets low prices
+
+#How does the price distribution change with respect to different CPU companies and their frequencies?	
+Yes, as we can see that Intel has a wide range of cpu_freq in addition to the higest level of freq, so it ranks on the top of AVG price
+
+#What are the patterns of laptop pricing with different storage types and sizes?	
+We found that SSD storage type gets the highest Avg price even if there is another type provides the same storage bust different type. AVG price for SSD 1024 storage is 3141 Euros, Hybrid 857 Euros, and HDD is 671 Euros
+
+#Is there a significant price difference between laptops with high versus low screen resolutions, and how does this differ by type? And how many aptops are low and high?	
+Yes, there is price different between laptops with different screen resolution as screens with high resolution AVG price is 2424 Euros, and screens with low resolution AVD price is 1089. We have 43 laptops high resolution and 1089 low resolution
+
+#What is the relationship between weight and price?	
+It is not clear that weight affecys yhe price as there are other different factors does this effect like Ram - Storage type and other features
