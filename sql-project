@@ -33,7 +33,23 @@ SELECT
     AVG(CPU_freq) AS avg_cpu_freq
 FROM laptop_prices;
 
- -- How do features like company, PrimaryStorageType, RAM, screen size, or CPU frequency impact the price of laptops?
+-- How does brand reputation affect laptop prices?
+
+select company,
+ avg(price_euros) as avg_price
+ from laptop_prices
+ group by Company
+ order by 2 desc;
+ 
+ -- Does screen Type associated with significantly higher prices?
+
+SELECT 
+    Screen, 
+    AVG(Price_euros) AS avg_price
+FROM laptop_prices
+GROUP BY Screen;
+
+-- Do certain brands command higher prices, and if so, why?
  
 SELECT company,
     PrimaryStorageType,
@@ -44,22 +60,6 @@ SELECT company,
 FROM laptop_prices
 GROUP BY Ram, Inches, CPU_freq, company, PrimaryStorageType
 ORDER BY avg_price DESC;
-
--- How does brand reputation affect laptop prices?
-
-select company,
- avg(price_euros) as avg_price
- from laptop_prices
- group by Company
- order by 2 desc;
-
--- Does screen Type or additional storage type associated with significantly higher prices?
-
-SELECT 
-    Screen, 
-    AVG(Price_euros) AS avg_price
-FROM laptop_prices
-GROUP BY Screen;
 
 SELECT 
     PrimaryStorageType,
@@ -96,27 +96,28 @@ WITH ResolutionCTE AS (
     FROM laptop_prices
 )
 
+   
 -- Is there a significant price difference between laptops with high versus low screen resolutions, and how does this differ by type?
 
-SELECT Typename, 
+SELECT 
        Resolution_Type,
-       COUNT(Typename),
+       COUNT(Typename) laptops_count,
        AVG(Price_euros) AS avg_price
 FROM ResolutionCTE
-GROUP BY Typename, Resolution_Type
+GROUP BY  Resolution_Type
 ORDER BY 1, 2;
 
 -- How does the price distribution change with respect to different CPU companies and their frequencies?
 
 SELECT cpu_company,
-	   cpu_freq,
+	   AVG(cpu_freq),
+	   MIN(Price_euros),
        MAX(Price_euros),
-       MIN(Price_euros),
        AVG(Price_euros)
 FROM laptop_prices
-GROUP BY cpu_company, cpu_freq;
+GROUP BY cpu_company;
 
--- What are the patterns of laptop pricing with different storage types and sizes
+-- What are the patterns of laptop pricing with different storage types and sizes?
  
 SELECT 
     PrimaryStorageType,
@@ -137,19 +138,29 @@ WITH ResolutionCTE AS (
            END AS Resolution_Type
     FROM laptop_prices
 )
+
 SELECT Company,
        PrimaryStorageType,
        COUNT(Product),
        CASE
-           WHEN AVG(Price_euros) >= 900 THEN 'High_price'
+           WHEN AVG(Price_euros) >= 1000 THEN 'High_price'
            ELSE 'Low_price'
        END AS Price_level,
        Resolution_Type
 FROM ResolutionCTE
 GROUP BY Company, PrimaryStorageType, Resolution_Type
-HAVING Price_level = 'High_price'
-   AND COUNT(Product) > 50;
+HAVING Price_level = 'High_price';
 
+-- What is the relationship between weight and price?
+
+SELECT Company,
+       CASE
+           WHEN AVG(Weight) >= 1.8 THEN 'Heavy'
+           ELSE 'Normal'
+       END AS Weight_define,
+	   AVG(Price_euros) AS Avg_Price
+FROM laptop_prices
+GROUP BY Company;
 
 
 
