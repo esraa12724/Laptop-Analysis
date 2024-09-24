@@ -63,3 +63,23 @@ Formatting Issues
 -----------------------------------------------------------------------------------
 
 The dataset contained some issues in datatpes, Nulls, and I dealed with these issues using python.
+ChatGPT Auto
+
+
+During the preprocessing of the dataset, the following issues were identified and addressed:
+
+1. Inconsistent Data Types
+Columns affected: inches, cpu_freq, screenH
+
+Solution:
+Converted inches and cpu_freq to decimal values for consistency.
+Converted screenH to a whole number (integer).
+
+
+3. Missing Values
+Columns affected: inches, cpu_freq, prices_euros, retinadisplay
+
+Solution:
+Replaced missing values in inches and cpu_freq with the mean of the respective columns.
+Replaced missing values in prices_euros with the median.
+Replaced missing values in retinadisplay with the mode.
